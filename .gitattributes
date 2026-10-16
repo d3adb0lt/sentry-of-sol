@@ -1,5 +1,5 @@
 # Normalize line endings
-* text=auto
+* text=auto eol=lf
 
 # Unity test assets: treat them as text, LF endings
 *.cs      text diff=csharp eol=lf
