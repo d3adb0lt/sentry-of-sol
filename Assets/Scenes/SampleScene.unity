@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &498981865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 498981866}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &498981866
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498981865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2318238361703564020}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +371,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &862161708 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2676095065693646778, guid: b7c8caed39b05a146a61feb773f60a07, type: 3}
+  m_PrefabInstance: {fileID: 2318238361703564019}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2318238361703564019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -402,9 +438,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6915309942781889815, guid: b7c8caed39b05a146a61feb773f60a07, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 498981866}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2676095065693646778, guid: b7c8caed39b05a146a61feb773f60a07, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2318238361703564022}
+    - targetCorrespondingSourceObject: {fileID: 2676095065693646778, guid: b7c8caed39b05a146a61feb773f60a07, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2318238361703564021}
   m_SourcePrefab: {fileID: 100100000, guid: b7c8caed39b05a146a61feb773f60a07, type: 3}
+--- !u!4 &2318238361703564020 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6915309942781889815, guid: b7c8caed39b05a146a61feb773f60a07, type: 3}
+  m_PrefabInstance: {fileID: 2318238361703564019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2318238361703564021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862161708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60a2f8dda76d5244a9f4c5eb2a05dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShipBlaster
+  bulletPrefab: {fileID: 1439146286506071185, guid: e61d1638ef94213449e259cb98ed4670, type: 3}
+  muzzle: {fileID: 498981866}
+  fireRate: 3
+--- !u!114 &2318238361703564022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862161708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c328a933390e6f84e85ac7acb681a61d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShipAim
+  rotateSpeed: 720
+  fireAngleTolerance: 6
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
