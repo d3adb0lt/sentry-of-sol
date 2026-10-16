@@ -3,7 +3,13 @@ using UnityEngine.InputSystem;
 
 public class ShipAim : MonoBehaviour
 {
-    [SerializeField] float rotateSpeed = 720f; // degrees per second
+    [SerializeField] private float rotateSpeed = 720f;
+    [SerializeField] private float fireAngleTolerance = 8f;
+    
+    public bool IsAiming { get; private set; }
+    public bool IsAligned =>
+        IsAiming &&
+        Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.z, _targetAngle)) <= fireAngleTolerance;
 
     private Camera _cam;
     private float _targetAngle;
@@ -15,8 +21,9 @@ public class ShipAim : MonoBehaviour
 
     private void Update()
     {
+        IsAiming = Pointer.current != null && Pointer.current.press.isPressed;
         // While the screen is touched (or the mouse is held), aim at that point
-        if (Pointer.current != null && Pointer.current.press.isPressed)
+        if (IsAiming)
         {
             Vector2 screenPos = Pointer.current.position.ReadValue();
             Vector3 worldPos = _cam.ScreenToWorldPoint(screenPos);
