@@ -9,7 +9,7 @@ public class ShipAim : MonoBehaviour
     public bool IsAiming { get; private set; }
     public bool IsAligned =>
         IsAiming &&
-        Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.z, targetAngle)) <= fireAngleTolerance;
+        Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.z, _targetAngle)) <= fireAngleTolerance;
 
     private Camera _cam;
     private float _targetAngle;
