@@ -107,3 +107,11 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# OS Crap
+.DS_Store
+Thumbs.db
+sysinfo.txt
+
+# Jet Brains IDE Crap
+.idea/
