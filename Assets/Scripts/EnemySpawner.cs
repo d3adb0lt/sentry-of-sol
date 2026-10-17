@@ -3,7 +3,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] Enemy enemyPrefab;
-    [SerializeField] float spawnInterval = 1.5f;
+    [SerializeField] private RunManager run;
     [SerializeField] float spawnMargin = 1f;
 
     [Header("Direction")]
@@ -35,6 +35,8 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
+        if (!run.IsRunning) return; // run over? halt spawning
+        
         timer -= Time.deltaTime;
         if (timer > 0f) return;
 
@@ -42,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
         Vector2 pos = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
         Instantiate(enemyPrefab, pos, Quaternion.identity);
 
-        timer = spawnInterval;
+        timer = Mathf.Lerp(run.Planet.startSpawnInterval, run.Planet.endSpawnInterval, run.Progress);
     }
 
     float PickSpawnAngle()

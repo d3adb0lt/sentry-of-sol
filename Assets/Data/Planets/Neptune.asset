@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlanetData
   displayName: Neptune
   runDuration: 60
-  startSpawnInterval: 1.6
-  endSpawnInterval: 0.8
+  startSpawnInterval: 1.4
+  endSpawnInterval: 0.6
   color: {r: 0.3, g: 0.5, b: 1, a: 1}

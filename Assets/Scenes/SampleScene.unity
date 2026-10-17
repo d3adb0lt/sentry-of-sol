@@ -385,8 +385,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyPrefab: {fileID: 5487511713500010821, guid: 65052d2736ba63e41b54adf51e071b9b, type: 3}
-  spawnInterval: 1.5
+  run: {fileID: 1512826381}
   spawnMargin: 1
+  flankChance: 0.2
+  aheadSpread: 30
 --- !u!1 &1512826379
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4d91cc5aceb0e84c8e1f27d113f4335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RunManager
-  planet: {fileID: 11400000, guid: fb42f011515c8c149a60b0197221724d, type: 2}
+  planet: {fileID: 11400000, guid: 26940e958cd728f448534cfe518be6e0, type: 2}
 --- !u!1001 &7266733722176700589
 PrefabInstance:
   m_ObjectHideFlags: 0
