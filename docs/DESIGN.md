@@ -12,3 +12,7 @@ Each run is longer than the last.
 
 ## Weapons
 - Blasters auto-fire only while the plater is touching and the ship is within the aim tolerance margins.
+
+# Flight feel
+- The ship's flight speed is constant. progress = elapsed time / run duration.
+- The starfield speeds up with progress (this is purely visual) to build tension near the planet.
