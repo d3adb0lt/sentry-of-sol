@@ -387,6 +387,51 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5487511713500010821, guid: 65052d2736ba63e41b54adf51e071b9b, type: 3}
   spawnInterval: 1.5
   spawnMargin: 1
+--- !u!1 &1512826379
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1512826380}
+  - component: {fileID: 1512826381}
+  m_Layer: 0
+  m_Name: RunManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1512826380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512826379}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.28239, y: 2.37266, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1512826381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512826379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d91cc5aceb0e84c8e1f27d113f4335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RunManager
+  planet: {fileID: 11400000, guid: fb42f011515c8c149a60b0197221724d, type: 2}
 --- !u!1001 &7266733722176700589
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -452,3 +497,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 7266733722176700589}
   - {fileID: 1457844445}
+  - {fileID: 1512826380}
