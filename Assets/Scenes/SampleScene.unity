@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
   m_AspectMode: 3
-  m_AspectRatio: 1.78
+  m_AspectRatio: 1.12
 --- !u!1 &425031605
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,6 +2236,59 @@ MonoBehaviour:
   - {fileID: 1024277707}
   emptyColor: {r: 1, g: 1, b: 1, a: 0.15}
   fullColor: {r: 0.96, g: 0, b: 0.27, a: 1}
+--- !u!1 &2052769061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2052769062}
+  - component: {fileID: 2052769063}
+  m_Layer: 0
+  m_Name: ChallengeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2052769062
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052769061}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 540, y: 960, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2052769063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052769061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 193695d9f836a5e4287b4eaa5eba0920, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChallengeManager
+  signs:
+  - {fileID: 11400000, guid: 5c3b11504626e884194c3459c9fc56c7, type: 2}
+  - {fileID: 11400000, guid: dcb2a43ed3b52b94b8ffe728d4db8114, type: 2}
+  - {fileID: 11400000, guid: 8cef3aa3efcfa8d469093199a35a6776, type: 2}
+  - {fileID: 11400000, guid: ad18c5ee00498ef449d71b7a56e20752, type: 2}
+  - {fileID: 11400000, guid: 0063ea6987000b244b44949a9e90031c, type: 2}
+  challengeSource: {fileID: 538599231}
+  rail: {fileID: 7266733722176700590}
+  run: {fileID: 1512826381}
 --- !u!1 &2134848207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,7 +2477,8 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 7266733722176700589}
   - {fileID: 1457844445}
-  - {fileID: 1512826380}
   - {fileID: 114867357}
   - {fileID: 2134848211}
   - {fileID: 826924844}
+  - {fileID: 1512826380}
+  - {fileID: 2052769062}
