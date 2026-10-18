@@ -404,7 +404,7 @@ VideoPlayer:
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
   m_RenderMode: 2
-  m_AspectRatio: 2
+  m_AspectRatio: 1
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
@@ -877,11 +877,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultipleChoiceChallenge
   videoPlayer: {fileID: 291422637}
+  videoDisplay: {fileID: 291422635}
   answerButtons:
   - {fileID: 12606451}
   - {fileID: 781753259}
   - {fileID: 1083701466}
   feedbackSeconds: 0.8
+  prepareTimeout: 3
   correctColor: {r: 0.3, g: 1, b: 0.4, a: 1}
   wrongColor: {r: 1, g: 0.1273585, b: 0.1273585, a: 1}
 --- !u!1 &593129092
