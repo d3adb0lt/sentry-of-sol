@@ -16,3 +16,11 @@ Each run is longer than the last.
 # Flight feel
 - The ship's flight speed is constant. progress = elapsed time / run duration.
 - The starfield speeds up with progress (this is purely visual) to build tension near the planet.
+
+## SignRail & challenges
+- The SignRail holds up to 3 power cells; each correct answer adds one (none when full).
+- Challenge modes implement ISignChallenge, so the game only cares whether an answer was correct.
+  - Multiple choice (no camera): a sign video plays; pick the matching word.
+  - Camera recognition (planned): the word is shown; the player signs it.
+- A wrong answer highlights the correct one briefly, then moves on to a new sign (no retry).
+- The challenge panel occupies the bottom 25% of the screen; presses starting on UI never aim the ship.

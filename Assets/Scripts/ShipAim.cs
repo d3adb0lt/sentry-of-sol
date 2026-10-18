@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class ShipAim : MonoBehaviour
@@ -11,8 +13,11 @@ public class ShipAim : MonoBehaviour
         IsAiming &&
         Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.z, _targetAngle)) <= fireAngleTolerance;
 
+    private static readonly List<RaycastResult> uiHits = new(); // reusable, so as to not include garbo each frame
+    
     private Camera _cam;
     private float _targetAngle;
+    private bool _pressStartedOnUI;
 
     private void Awake()
     {
@@ -21,11 +26,18 @@ public class ShipAim : MonoBehaviour
 
     private void Update()
     {
-        IsAiming = Pointer.current != null && Pointer.current.press.isPressed;
+        Pointer pointer = Pointer.current;
+        bool pressed = pointer != null && pointer.press.isPressed;
+        
+        if (pressed && pointer.press.wasPressedThisFrame)
+            _pressStartedOnUI = IsOverUI(pointer.position.ReadValue());
+        
+        IsAiming = pressed && !_pressStartedOnUI;
+        
         // While the screen is touched (or the mouse is held), aim at that point
         if (IsAiming)
         {
-            Vector2 screenPos = Pointer.current.position.ReadValue();
+            Vector2 screenPos = pointer.position.ReadValue();
             Vector3 worldPos = _cam.ScreenToWorldPoint(screenPos);
             Vector2 dir = worldPos - transform.position;
 
@@ -36,5 +48,15 @@ public class ShipAim : MonoBehaviour
         float z = Mathf.MoveTowardsAngle(transform.eulerAngles.z, _targetAngle,
             rotateSpeed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(0f, 0f, z);
+    }
+    
+    static bool IsOverUI(Vector2 screenPos)
+    {
+        if (EventSystem.current == null) return false;
+        
+        var data = new PointerEventData(EventSystem.current) { position = screenPos };
+        uiHits.Clear();
+        EventSystem.current.RaycastAll(data, uiHits);
+        return uiHits.Count > 0;
     }
 }
